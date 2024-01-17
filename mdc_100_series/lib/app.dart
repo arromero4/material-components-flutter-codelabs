@@ -24,6 +24,7 @@ class ShrineApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Shrine',
       initialRoute: '/login',
       routes: {
@@ -35,7 +36,7 @@ class ShrineApp extends StatelessWidget {
         // TODO: Change backLayer field value to CategoryMenuPage (104)
       },
       // TODO: Customize the theme (103)
-      theme: ThemeData.light(useMaterial3: true),
+      theme: ThemeData(useMaterial3: true),
     );
   }
 }
