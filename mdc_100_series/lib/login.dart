@@ -38,7 +38,10 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 Image.asset('assets/diamond.png'),
                 const SizedBox(height: 16.0),
-                const Text('SHRINE'),
+                Text(
+                  'SHRINE',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
               ],
             ),
             const SizedBox(height: 12.0),
@@ -48,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
             TextField(
               controller: _usernameController,
               decoration: const InputDecoration(
-                filled: true,
+                // Removed filled: true
                 labelText: 'Username',
               ),
             ), //spacer
@@ -60,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
             TextField(
               controller: _passwordController,
               decoration: const InputDecoration(
-                filled: true,
+                // Removed filled: true
                 labelText: 'Password',
               ),
               obscureText: true,
@@ -78,6 +81,14 @@ class _LoginPageState extends State<LoginPage> {
                     _passwordController.clear();
                   },
                   child: Text('CANCEL'),
+                  style: TextButton.styleFrom(
+                    foregroundColor: Theme.of(context).colorScheme.secondary,
+                    shape: const BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(7.0),
+                      ),
+                    ),
+                  ),
                 ),
                 // TODO: Add an elevation to NEXT (103)
                 // TODO: Add a beveled rectangular border to NEXT (103)
@@ -87,6 +98,16 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.pop(context);
                   },
                   child: Text('NEXT'),
+                  style: ElevatedButton.styleFrom(
+                    elevation: 8.0,
+                    shape: const BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(7.0),
+                      ),
+                    ),
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    foregroundColor: Theme.of(context).colorScheme.secondary,
+                  ),
                 ),
               ],
             ),
